@@ -1,0 +1,81 @@
+import pandas as pd 
+from sklearn.datasets import load_iris
+iris = load_iris()
+df = pd.DataFrame(iris.data, columns=iris.feature_names)
+print("First 5 rows of the Iris dataset:")
+print(df.head())
+#mean
+mean_values = df.mean()
+print("\nMean values:")
+print(mean_values)
+#median
+median_values = df.median()
+print("\nMedian values:")
+print(median_values)
+#mode
+mode_values = df.mode().iloc[0]
+print("\nMode values:")
+print(mode_values)
+#Range
+range_values = df.max() - df.min()
+print("\nRange values:")
+print(range_values)
+#variance
+variance_values = df.var()
+print("\nVariance values:")
+print(variance_values)
+#standard deviation
+std_values = df.std()
+print("\nStandard Deviation values:")
+print(std_values)
+#interquartile range
+Q1 = df.quantile(0.25)
+Q3 = df.quantile(0.75)
+IQR = Q3 - Q1
+print("\nInterquartile Range (IQR) values:")
+print(IQR)
+#skewness
+skewness_values = df.skew()
+print("\nSkewness values:")
+print(skewness_values)
+#kurtosis
+kurtosis_values = df.kurtosis()
+print("\nKurtosis values:")
+print(kurtosis_values)
+
+ #TIPS DATASET 
+# import pandas as pd
+# import seaborn as sns
+# df = sns.load_dataset("tips")
+# print("First 5 rows of the Tips dataset:")
+# print(df.head())
+# # mean
+# mean_values = df.mean(numeric_only=True)
+# print("\nMean values:")
+# print(mean_values)
+# # median
+# median_values = df.median(numeric_only=True)
+# print("\nMedian values:")
+# print(median_values)
+# # mode
+# mode_values = df.mode().iloc[0]
+# print("\nMode values:")
+# print(mode_values)
+# #Range
+# range_values = df.max(numeric_only=True) - df.min(numeric_only=True)
+# print("\nRange values:")
+# print(range_values)
+# #variance
+# variance_values = df.var(numeric_only=True)
+# print("\nVariance values:")
+# print(variance_values)
+# #standard deviation
+# std_values = df.std(numeric_only=True)
+# print("\nStandard Deviation values:")
+# print(std_values)
+# #interquartile range
+# Q1 = df.quantile(0.25, numeric_only=True)
+# Q3 = df.quantile(0.75, numeric_only=True)
+# IQR = Q3 - Q1
+# print("\nInterquartile Range (IQR) values:")
+# print(IQR)
